@@ -112,7 +112,7 @@ SET(PROJECT_SOURCES
 	libraries/STM32F1xx_HAL/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_crc.c
 	libraries/STM32F1xx_HAL/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c
 	libraries/STM32F1xx_HAL/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c
-		private/boma.c private/boma.h)
+)
 
 LINK_DIRECTORIES(
 )
