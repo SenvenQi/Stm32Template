@@ -17,7 +17,7 @@ if os.getenv('RTT_ROOT'):
 # EXEC_PATH is the compiler execute path, for example, CodeSourcery, Keil MDK, IAR
 if  CROSS_TOOL == 'gcc':
     PLATFORM    = 'gcc'
-    EXEC_PATH   = r'C:\Users\XXYYZZ'
+    EXEC_PATH   = r'C:/Users/xxx'
 elif CROSS_TOOL == 'keil':
     PLATFORM    = 'armcc'
     EXEC_PATH   = r'C:/Keil_v5'
@@ -112,7 +112,7 @@ elif PLATFORM == 'armclang':
     LFLAGS += ' --list rt-thread.map '
     LFLAGS += r' --strict --scatter "board\linker_scripts\link.sct" '
     CFLAGS += ' -I' + EXEC_PATH + '/ARM/ARMCLANG/include'
-    LFLAGS += ' --libpath=' + EXEC_PATH + '/ARM/ARMCLANG/lib'
+    LFLAGS += ' --libpath=' + EXEC_PATH + '/ARM/ARMCLANG//lib'
 
     EXEC_PATH += '/ARM/ARMCLANG/bin/'
 
