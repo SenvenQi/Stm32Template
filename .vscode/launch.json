@@ -7,7 +7,7 @@
 		
 		{
 			"cwd": "${workspaceRoot}",
-			"executable": "./cmake-build-debug/rtthread.elf",
+			"executable": "./build/rtthread.elf",
 			"name": "Debug with OpenOCD",
 			"request": "launch",
 			"type": "cortex-debug",
