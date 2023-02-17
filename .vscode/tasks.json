@@ -1,0 +1,57 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "download",
+			"type": "shell",
+			"command": [
+				"openocd"
+			],
+			"args": [
+				"-f",
+				"stm32f103.cfg",
+				"-c",
+				"tcl_port disabled",
+				"-c",
+				"gdb_port disabled",
+				"-c",
+				"tcl_port disabled",
+				"-c",
+				"program \"build/rtthread.elf\"",
+				"-c",
+				"reset",
+				"-c",
+				"shutdown"
+			],
+			"group": "build",
+			"options": {
+				"statusbar": {
+					"label" : "download",
+				  }
+			},
+			"detail": "下载程序到单片机"
+		},
+		{
+			"type": "cmake",
+			"label": "CMake: clean rebuild",
+			"command": "cleanRebuild",
+			"targets": [
+				"all"
+			],
+			"group": "build",
+			"problemMatcher": [],
+			"detail": "CMake template clean rebuild task"
+		},
+		{
+			"type": "cmake",
+			"label": "CMake: build",
+			"command": "build",
+			"targets": [
+				"all"
+			],
+			"group": "build",
+			"problemMatcher": [],
+			"detail": "CMake template build task"
+		}
+	]
+}
