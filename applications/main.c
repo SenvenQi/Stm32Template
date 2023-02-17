@@ -23,8 +23,8 @@ int main(void)
     while (1)
     {
         rt_pin_write(LED3_PIN, PIN_HIGH);
-        rt_thread_mdelay(5000);
+        rt_thread_mdelay(1000);
         rt_pin_write(LED3_PIN, PIN_LOW);
-        rt_thread_mdelay(500);
+        rt_thread_mdelay(1000);
     }
 }

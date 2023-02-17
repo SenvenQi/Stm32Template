@@ -3,21 +3,21 @@ CMAKE_MINIMUM_REQUIRED(VERSION 3.10)
 SET(CMAKE_SYSTEM_NAME Generic)
 SET(CMAKE_SYSTEM_PROCESSOR cortex-m3)
 #SET(CMAKE_VERBOSE_MAKEFILE ON)
-
+SET(GCC "D:/app/GNU Arm Embedded Toolchain/10 2021.10/bin")
 SET(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-SET(CMAKE_C_COMPILER "/Applications/ARM/bin/arm-none-eabi-gcc")
-SET(CMAKE_ASM_COMPILER "/Applications/ARM/bin/arm-none-eabi-gcc")
+SET(CMAKE_C_COMPILER ${GCC}/arm-none-eabi-gcc.exe)
+SET(CMAKE_ASM_COMPILER ${GCC}/arm-none-eabi-gcc.exe)
 SET(CMAKE_C_FLAGS " -mcpu=cortex-m3 -mthumb -ffunction-sections -fdata-sections -Dgcc -O0 -gdwarf-2 -g")
 SET(CMAKE_ASM_FLAGS " -c -mcpu=cortex-m3 -mthumb -ffunction-sections -fdata-sections -x assembler-with-cpp -Wa,-mimplicit-it=thumb  -gdwarf-2")
 SET(CMAKE_C_COMPILER_WORKS TRUE)
 
-SET(CMAKE_CXX_COMPILER "/Applications/ARM/bin/arm-none-eabi-g++")
+SET(CMAKE_CXX_COMPILER ${GCC}/arm-none-eabi-g++.exe)
 SET(CMAKE_CXX_FLAGS " -mcpu=cortex-m3 -mthumb -ffunction-sections -fdata-sections -Dgcc -O0 -gdwarf-2 -g")
 SET(CMAKE_CXX_COMPILER_WORKS TRUE)
 
-SET(CMAKE_OBJCOPY "/Applications/ARM/bin/arm-none-eabi-objcopy")
-SET(CMAKE_SIZE "/Applications/ARM/bin/arm-none-eabi-size")
+SET(CMAKE_OBJCOPY ${GCC}/arm-none-eabi-objcopy.exe)
+SET(CMAKE_SIZE ${GCC}/arm-none-eabi-size.exe)
 
 SET(CMAKE_EXE_LINKER_FLAGS " -mcpu=cortex-m3 -mthumb -ffunction-sections -fdata-sections -Wl,--gc-sections,-Map=rt-thread.map,-cref,-u,Reset_Handler -T ${CMAKE_SOURCE_DIR}/board/linker_scripts/link.lds")
 
