@@ -8,23 +8,15 @@
  * 2018-11-06     SummerGift   first version
  */
 
-#include <rtthread.h>
-#include <rtdevice.h>
-#include <board.h>
+#include "infrastructure/uart.h"
+#include "rtthread.h"
 
-/* defined the LED3 pin: PA3 */
-#define LED3_PIN    GET_PIN(A, 3)
 
 int main(void)
 {
+    rt_thread_t thread;
+    thread = rt_thread_create("uart", &serial_thread_entry, RT_NULL, 1024, 10, 1000);
+    rt_thread_startup(thread);
     /* set LED0 pin mode to output */
-    rt_pin_mode(LED3_PIN, PIN_MODE_OUTPUT);
-
-    while (1)
-    {
-        rt_pin_write(LED3_PIN, PIN_HIGH);
-        rt_thread_mdelay(2000);
-        rt_pin_write(LED3_PIN, PIN_LOW);
-        rt_thread_mdelay(1000);
-    }
+    while (1);
 }
