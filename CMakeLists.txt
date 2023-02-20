@@ -3,21 +3,21 @@ CMAKE_MINIMUM_REQUIRED(VERSION 3.10)
 SET(CMAKE_SYSTEM_NAME Generic)
 SET(CMAKE_SYSTEM_PROCESSOR cortex-m3)
 #SET(CMAKE_VERBOSE_MAKEFILE ON)
-SET(GCC "D:/app/GNU Arm Embedded Toolchain/10 2021.10/bin")
+SET(GCC "/Applications/ARM/bin")
 SET(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-SET(CMAKE_C_COMPILER ${GCC}/arm-none-eabi-gcc.exe)
-SET(CMAKE_ASM_COMPILER ${GCC}/arm-none-eabi-gcc.exe)
+SET(CMAKE_C_COMPILER ${GCC}/arm-none-eabi-gcc)
+SET(CMAKE_ASM_COMPILER ${GCC}/arm-none-eabi-gcc)
 SET(CMAKE_C_FLAGS " -mcpu=cortex-m3 -mthumb -ffunction-sections -fdata-sections -Dgcc -O0 -gdwarf-2 -g")
 SET(CMAKE_ASM_FLAGS " -c -mcpu=cortex-m3 -mthumb -ffunction-sections -fdata-sections -x assembler-with-cpp -Wa,-mimplicit-it=thumb  -gdwarf-2")
 SET(CMAKE_C_COMPILER_WORKS TRUE)
 
-SET(CMAKE_CXX_COMPILER ${GCC}/arm-none-eabi-g++.exe)
+SET(CMAKE_CXX_COMPILER ${GCC}/arm-none-eabi-g++)
 SET(CMAKE_CXX_FLAGS " -mcpu=cortex-m3 -mthumb -ffunction-sections -fdata-sections -Dgcc -O0 -gdwarf-2 -g")
 SET(CMAKE_CXX_COMPILER_WORKS TRUE)
 
-SET(CMAKE_OBJCOPY ${GCC}/arm-none-eabi-objcopy.exe)
-SET(CMAKE_SIZE ${GCC}/arm-none-eabi-size.exe)
+SET(CMAKE_OBJCOPY ${GCC}/arm-none-eabi-objcopy)
+SET(CMAKE_SIZE ${GCC}/arm-none-eabi-size)
 
 SET(CMAKE_EXE_LINKER_FLAGS " -mcpu=cortex-m3 -mthumb -ffunction-sections -fdata-sections -Wl,--gc-sections,-Map=rt-thread.map,-cref,-u,Reset_Handler -T ${CMAKE_SOURCE_DIR}/board/linker_scripts/link.lds")
 
@@ -112,7 +112,7 @@ SET(PROJECT_SOURCES
 	libraries/STM32F1xx_HAL/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_crc.c
 	libraries/STM32F1xx_HAL/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c
 	libraries/STM32F1xx_HAL/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c
-)
+		applications/core/shelves.c applications/core/shelves.h applications/infrastructure/buzzer.h applications/infrastructure/buzzer.c applications/infrastructure/dial_switch.h applications/infrastructure/dial_switch.c applications/infrastructure/uart.c applications/infrastructure/uart.h)
 
 LINK_DIRECTORIES(
 )
